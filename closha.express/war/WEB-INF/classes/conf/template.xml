@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<closha id="%s" name="%s" author="%s" version="0.1">
+	<description>%s</description>
+	<modules>
+		<module type="module" id="%s" key="1" name="START"
+			img_src="images/closha/module/start.png" img_width="48" img_height="48"
+			x="20" y="140" parameter_number="0" status="Waiting" isTerminate="1"
+			version="1.0 " script="null" language="null" cmd="null" app_format="SCRIPT_MODULE"
+			author="default" url="null" is_open="false" is_multi="false"
+			is_parallel="false" is_alignment="false">Start module</module>
+		<module type="module" id="%s" key="0" name="END"
+			img_src="images/closha/module/end.png" img_width="48" img_height="48"
+			x="720" y="140" parameter_number="0" status="Waiting" isTerminate="0"
+			version="1.0 " script="null" language="null" cmd="null" app_format="SCRIPT_MODULE"
+			author="default" url="null" is_open="false" is_multi="false"
+			is_parallel="false" is_alignment="false">End module</module>
+	</modules>
+	<connections>
+	</connections>
+	<parameters>
+	</parameters>
+</closha>

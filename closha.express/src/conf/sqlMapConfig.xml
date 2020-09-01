@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+	<!-- Optimizing Setting -->
+	<settings enhancementEnabled="true" useStatementNamespaces="true" />
+
+	<!-- Sql Map 설정 -->
+	<sqlMap resource="org/kobic/gwt/smart/closha/ibatis/board.xml" />
+	<sqlMap resource="org/kobic/gwt/smart/closha/ibatis/ontology.xml" />
+	<sqlMap resource="org/kobic/gwt/smart/closha/ibatis/register.xml" />
+	<sqlMap resource="org/kobic/gwt/smart/closha/ibatis/project.xml" />
+	<sqlMap resource="org/kobic/gwt/smart/closha/ibatis/instance.xml" />
+	
+</sqlMapConfig>

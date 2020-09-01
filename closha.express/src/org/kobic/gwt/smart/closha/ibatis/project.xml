@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="project">
+	<typeAlias alias="ProjectModel" type="org.kobic.gwt.smart.closha.shared.model.project.ProjectModel"/>
+	
+	<insert id="makeNewProject" parameterClass="ProjectModel">
+		INSERT INTO project(projectID, pipelineID, projectName, projectDesc, projectOwner, assign, eCheck, createDate) 
+			VALUES(#projectID#, #pipelineID#, #projectName#, #projectDesc#, #projectOwner#, #assign#, #eCheck#, #createDate#)
+	</insert>	
+	
+	<select id="getProjectList" resultClass="ProjectModel" parameterClass="java.util.HashMap">
+		SELECT p.projectID, p.pipelineID, p.projectName, p.projectDesc, p.projectOwner, p.assign, p.eCheck, 
+			p.createDate, i.status FROM project p, instancepipeline i WHERE p.projectID = i.instanceID AND p.projectOwner = #projectOwner#
+	</select>
+	
+	<select id="getProject" resultClass="ProjectModel" parameterClass="java.util.HashMap">		
+		SELECT p.projectID, p.pipelineID, p.projectName, p.projectDesc, p.projectOwner, p.assign, p.eCheck, 
+			p.createDate, i.status FROM project p, instancepipeline i WHERE p.projectID = i.instanceID AND p.projectID = #projectID#
+	</select>
+	
+	<select id="checkProjectExist" resultClass="ProjectModel" parameterClass="java.util.HashMap">
+		SELECT * FROM project WHERE projectOwner = #projectOwner# AND projectName = #projectName#
+	</select>
+	
+	<delete id="deleteUserProject" parameterClass="String">
+		DELETE
+		FROM project
+		WHERE projectID = #projectID#
+	</delete>
+</sqlMap>
+
+
+
+
+
+
+

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ImageViewer" default="all" basedir="D:\eclipse-gwt\workspace\closha.express.en.dev">
+	<description>
+		This is build file for GWT module 'org.kobic.gwt.smart.closha.CloshaEntryPoint' deployment.
+		GWT Designer generates it each time when you initiate deployment.
+		
+		You can use this file later for manual deployment, but keep in mind, that
+		classpath is hardcoded in it, so after changes in classpath you should
+		regenerate build file.
+	</description>
+
+	<property name="gwt.home" value="C:/google/gwt/2.6.1" />
+	<property name="gwt.module.id" value="org.kobic.gwt.smart.closha.CloshaEntryPoint" />
+	<property name="war.name" value="closha.dev.war" />
+
+	<target name="jars" description="Package up the module project and required projects as jars">
+		<mkdir dir="war/WEB-INF/lib" />
+		<!--=== closha.express.en.dev ===-->
+		<jar destfile='war/WEB-INF/lib/closha.express.en.dev.jar'>
+			<fileset dir="D:/eclipse-gwt/workspace/closha.express.en.dev/src">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+		<copy todir='war/WEB-INF/lib'>
+			<fileset file="C:\google\gwt\2.6.1\gwt-dev.jar"/>
+			<fileset file="C:\google\gwt\2.6.1\validation-api-1.0.0.GA-sources.jar"/>
+			<fileset file="C:\google\gwt\2.6.1\validation-api-1.0.0.GA.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\activation-1.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\apacheds-i18n-2.0.0-M15.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\apacheds-kerberos-codec-2.0.0-M15.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\api-asn1-api-1.0.0-M20.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\api-util-1.0.0-M20.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\asm-3.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\avro-1.7.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\codemirror2-gwt-1.2.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-beanutils-1.7.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-beanutils-core-1.8.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-cli-1.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-codec-1.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-collections-3.2.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-compress-1.4.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-configuration-1.6.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-dbcp-1.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-digester-1.8.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-el-1.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-email-1.3.3.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-fileupload-1.2.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-httpclient-3.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-io-2.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-lang-2.6.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-logging-1.1.3.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-math3-3.1.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-net-3.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\commons-pool-1.5.6.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\curator-client-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\curator-framework-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\curator-recipes-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\eventservice-1.2.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\eventservice-rpc-1.2.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gson-2.2.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\guava-11.0.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\guava-gwt-16.0.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-connectors-1.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-dev.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-dnd-3.3.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-incubator-20101117-r1766.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-links-1.4.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-links-network.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-servlet.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-visualization.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwteventservice-1.2.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwtupload-1.0.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hadoop-annotations-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hadoop-auth-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hadoop-common-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hadoop-hdfs-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hadoop-hdfs-nfs-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hadoop-nfs-2.7.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\hamcrest-core-1.3.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\htrace-core-3.1.0-incubating.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\httpclient-4.2.5.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\httpcore-4.2.5.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\ibatis-2.3.4.726.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jackson-core-asl-1.9.13.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jackson-jaxrs-1.9.13.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jackson-mapper-asl-1.9.13.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jackson-xc-1.9.13.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jasper-compiler-5.5.23.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jasper-runtime-5.5.23.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\java-mail-1.4.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\java-xmlbuilder-0.4.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jaxb-api-2.2.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jaxb-impl-2.2.3-1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jdom-2.0.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jersey-core-1.9.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jersey-json-1.9.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jersey-server-1.9.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jets3t-0.9.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jettison-1.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jetty-6.1.26.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jetty-util-6.1.26.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jsch-0.1.42.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jsp-api-2.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\jsr305-3.0.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\junit-4.11.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\log4j-1.2.17.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\mail-1.4.7.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\mockito-all-1.8.5.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\mysql-connector-java-5.1.15-bin.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\netty-3.6.2.Final.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.hamcrest.core_1.3.0.v201303031735.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.moxieapps.gwt.highcharts-1.5.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.aop-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.asm-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.aspects-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.beans-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.context-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.context.support-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.core-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.expression-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.instrument-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.instrument.tomcat-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.jdbc-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.jms-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.orm-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.oxm-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.test-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.transaction-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.web-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.web.portlet-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.web.servlet-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\org.springframework.web.struts-3.1.0.RELEASE.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\paranamer-2.3.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\picard-1.74.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\protobuf-java-2.5.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\sam-1.74.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\servlet-api-2.5.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\slf4j-api-1.7.10.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\slf4j-log4j12-1.7.10.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\smartgwt-skins.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\smartgwt.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\snappy-java-1.0.4.1.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\sshxcute-1.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\stax-api-1.0-2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\velocity-1.7.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\xmlenc-0.52.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\xz-1.0.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\zookeeper-3.4.6.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\libthrift-0.9.2.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\gwt-syntaxhighlighter-1.1-gwt-standard.jar"/>
+			<fileset file="D:\eclipse-gwt\workspace\closha.express.en.dev\war\WEB-INF\lib\sso.client-1.0.jar"/>
+		</copy>		
+	</target>
+
+	<target name="gwt-compile" description="Compile to JavaScript">
+		<java classname="com.google.gwt.dev.Compiler" fork="yes" failonerror="true" maxmemory="1024m">
+			<classpath>
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/src" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/classes" />
+				<pathelement location="C:/google/gwt/2.6.1/gwt-user.jar" />
+				<pathelement location="C:/google/gwt/2.6.1/gwt-dev.jar" />
+				<pathelement location="C:/google/gwt/2.6.1/validation-api-1.0.0.GA-sources.jar" />
+				<pathelement location="C:/google/gwt/2.6.1/validation-api-1.0.0.GA.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/activation-1.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/apacheds-i18n-2.0.0-M15.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/apacheds-kerberos-codec-2.0.0-M15.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/api-asn1-api-1.0.0-M20.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/api-util-1.0.0-M20.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/asm-3.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/avro-1.7.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/codemirror2-gwt-1.2.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-beanutils-1.7.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-beanutils-core-1.8.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-cli-1.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-codec-1.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-collections-3.2.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-compress-1.4.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-configuration-1.6.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-dbcp-1.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-digester-1.8.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-el-1.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-email-1.3.3.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-fileupload-1.2.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-httpclient-3.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-io-2.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-lang-2.6.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-logging-1.1.3.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-math3-3.1.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-net-3.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/commons-pool-1.5.6.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/curator-client-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/curator-framework-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/curator-recipes-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/eventservice-1.2.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/eventservice-rpc-1.2.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gson-2.2.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/guava-11.0.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/guava-gwt-16.0.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-connectors-1.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-dev.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-dnd-3.3.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-incubator-20101117-r1766.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-links-1.4.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-links-network.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-servlet.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-visualization.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwteventservice-1.2.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwtupload-1.0.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hadoop-annotations-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hadoop-auth-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hadoop-common-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hadoop-hdfs-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hadoop-hdfs-nfs-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hadoop-nfs-2.7.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/hamcrest-core-1.3.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/htrace-core-3.1.0-incubating.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/httpclient-4.2.5.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/httpcore-4.2.5.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/ibatis-2.3.4.726.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jackson-core-asl-1.9.13.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jackson-jaxrs-1.9.13.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jackson-xc-1.9.13.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jasper-compiler-5.5.23.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jasper-runtime-5.5.23.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/java-mail-1.4.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/java-xmlbuilder-0.4.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jaxb-api-2.2.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jaxb-impl-2.2.3-1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jdom-2.0.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jersey-core-1.9.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jersey-json-1.9.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jersey-server-1.9.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jets3t-0.9.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jettison-1.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jetty-6.1.26.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jetty-util-6.1.26.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jsch-0.1.42.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jsp-api-2.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/jsr305-3.0.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/junit-4.11.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/log4j-1.2.17.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/mail-1.4.7.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/mockito-all-1.8.5.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/mysql-connector-java-5.1.15-bin.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/netty-3.6.2.Final.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.hamcrest.core_1.3.0.v201303031735.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.moxieapps.gwt.highcharts-1.5.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.aop-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.asm-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.aspects-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.beans-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.context-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.context.support-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.core-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.expression-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.instrument-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.instrument.tomcat-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.jdbc-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.jms-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.orm-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.oxm-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.test-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.transaction-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.web-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.web.portlet-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.web.servlet-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/org.springframework.web.struts-3.1.0.RELEASE.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/paranamer-2.3.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/picard-1.74.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/protobuf-java-2.5.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/sam-1.74.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/servlet-api-2.5.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/slf4j-api-1.7.10.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/slf4j-log4j12-1.7.10.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/smartgwt-skins.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/smartgwt.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/snappy-java-1.0.4.1.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/sshxcute-1.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/stax-api-1.0-2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/velocity-1.7.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/xmlenc-0.52.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/xz-1.0.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/zookeeper-3.4.6.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/libthrift-0.9.2.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/gwt-syntaxhighlighter-1.1-gwt-standard.jar" />
+				<pathelement location="D:/eclipse-gwt/workspace/closha.express.en.dev/war/WEB-INF/lib/sso.client-1.0.jar" />
+				<pathelement location="C:/google/gwt/2.6.1/gwt-dev.jar" />
+			</classpath>
+			<arg value="-style"/>
+			<arg value="DETAILED"/>
+			<arg value="${gwt.module.id}" />
+		</java>
+	</target>
+
+	<target name="war" depends="gwt-compile, jars">
+		<delete file="${war.name}" />
+		<jar destfile="${war.name}" basedir="war" duplicate="preserve" />
+	</target>
+	
+	<target name="deploy" depends="war">
+		<move file="${war.name}" todir="D:/" />
+	</target>
+
+	<target name="all" depends="deploy" />
+
+</project>

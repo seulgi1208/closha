@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="ontology">
+	<typeAlias alias="OntologyModel" type="org.kobic.gwt.smart.closha.shared.model.ontology.OntologyModel"/>
+	
+	<insert id="addOntology" parameterClass="OntologyModel">
+		INSERT INTO ontology(ontologyID, ontologyName, type) VALUES(#ontologyID#, #ontologyName#, #type#)
+	</insert>
+	
+	<select id="ontologyList" resultClass="OntologyModel" parameterClass="int">
+		SELECT * FROM ontology WHERE type = #type#
+	</select>				
+	
+	<select id="pipelineOntologyCount" resultClass="INT">
+		SELECT COUNT(*) FROM registerpipeline WHERE ontologyID = #ontologyID#;
+	</select>		
+	
+	<select id="moduleOntologyCountWithClient" resultClass="INT">
+		SELECT COUNT(*) FROM registerpipelinemodules WHERE ontologyID = #ontologyID# AND isOpen = 1;
+	</select>
+	
+	<select id="moduleOntologyCountWithAdmin" resultClass="INT">
+		SELECT COUNT(*) FROM registerpipelinemodules WHERE ontologyID = #ontologyID#;
+	</select>
+	
+	<delete id="deleteOntology" parameterClass="String">
+		DELETE
+		FROM ontology
+		WHERE ontologyID = #ontologyID#
+	</delete>
+</sqlMap>
+
+
+
+
+
+
+

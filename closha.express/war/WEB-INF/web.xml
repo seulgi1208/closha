@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+	PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+	"http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+	<!-- initialization  -->
+  
+<!-- 	<listener>
+		<listener-class>org.kobic.gwt.smart.closha.server.servlet.initialization.InitializationServlet</listener-class>
+	</listener> -->
+
+ 	<!-- GWT event service -->
+	<servlet>
+		<servlet-name>EventService</servlet-name>
+		<servlet-class>de.novanic.eventservice.service.EventServiceImpl</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EventService</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/gwteventservice</url-pattern>
+	</servlet-mapping>
+
+	<!-- file upload setting -->
+	<context-param>
+		<param-name>maxSize</param-name>
+		<param-value>10485760000</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>uploadServlet</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.servlet.upload.UnixUploadServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>uploadServlet</servlet-name>
+		<url-pattern>*.gupld</url-pattern>
+	</servlet-mapping>
+	
+	<!-- image servlet settting -->
+	<servlet>
+		<servlet-name>Image</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.servlet.output.ImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Image</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/image</url-pattern>
+	</servlet-mapping>
+	
+	<!-- result page servlet settting -->
+	<servlet>
+		<servlet-name>Result</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.servlet.output.HtmlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Result</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/result</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- file download setting -->
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.servlet.download.UnixDownloadServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/download</url-pattern>
+	</servlet-mapping>
+
+	<!-- filter declared -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- spring applicationContext -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>CloshaEntryPoint.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>UserController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.user.UserControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/UserController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.login.LoginControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/LoginController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>WorkFlowController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.WorkFlowControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WorkFlowController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/WorkFlowController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CommonController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.common.controller.CommonControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommonController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/CommonController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>HadoopFileSystemController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.hadoop.file.HadoopFileSystemControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HadoopFileSystemController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/HadoopFileSystemController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BoardController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.BoardControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/BoardController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegisterPipelineController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.RegisterPipelineControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterPipelineController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/RegisterPipelineController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ProjectController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.ProjectControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProjectController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/ProjectController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>InstancePipelineController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.InstancePipelineControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InstancePipelineController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/InstancePipelineController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ModuleExplorerController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.ModuleExplorerControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModuleExplorerController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/ModuleExplorerController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>PropertyController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.PropertyControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PropertyController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/PropertyController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BatchSystemContoller</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.BatchSystemContollerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BatchSystemContoller</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/BatchSystemContoller</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>WorkManagementController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.WorkManagementControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WorkManagementController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/WorkManagementController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ToolkitBarWindowController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.ToolkitBarWindowControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ToolkitBarWindowController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/ToolkitBarWindowController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegistrationController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.RegistrationControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegistrationController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/RegistrationController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>OntologyController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.OntologyControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OntologyController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/OntologyController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LocalWorkManagementController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.LocalWorkManagementControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LocalWorkManagementController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/LocalWorkManagementController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UnixFileSystemController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.unix.file.UnixFileSystemControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UnixFileSystemController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/UnixFileSystemController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CacheLiteClientController</servlet-name>
+		<servlet-class>org.kobic.gwt.smart.closha.server.controller.CacheLiteClientControllerImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CacheLiteClientController</servlet-name>
+		<url-pattern>/org.kobic.gwt.smart.closha.CloshaEntryPoint/CacheLiteClientController</url-pattern>
+	</servlet-mapping>
+
+</web-app>

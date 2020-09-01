@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="board">
+	<typeAlias alias="BoardModel" type="org.kobic.gwt.smart.closha.shared.model.board.BoardModel"/>
+	<typeAlias alias="BoardCommentModel" type="org.kobic.gwt.smart.closha.shared.model.board.ReplyModel"/>
+	
+	<insert id="writeContent" parameterClass="BoardModel">
+		INSERT INTO cboard(writer, type, summary, content, email, keyWord, date) 
+		VALUES(#writer#, #type#, #summary#, #content#, #email#, #keyWord#, #date#)
+	</insert>
+	<insert id="writeComment" parameterClass="BoardCommentModel">
+		INSERT INTO comments(writer, comment, date, email, linkedNum) 
+		VALUES(#writer#, #comment#, #date#, #email#, #linkedNum#)
+	</insert>
+	
+	<select id="getBoardList" resultClass="BoardModel">
+		SELECT ID, writer, type, summary, content, hitCount, recommandCount, email, keyWord, date FROM cboard ORDER BY ID DESC 
+		LIMIT  #startNum#, #endNum#
+	</select>	
+	<select id="getMyBoardList" resultClass="BoardModel">
+		SELECT ID, writer, type, summary, content, hitCount, recommandCount, email, keyWord, date FROM cboard 
+		WHERE writer = #writer# ORDER BY ID DESC
+	</select>	
+	<select id="getOneContent" parameterClass="int" resultClass="BoardModel">
+		SELECT ID, writer, type, summary, content, hitCount, recommandCount, email, keyWord, date FROM cboard WHERE ID = #id#
+	</select>
+	<select id="getOneCommentList" parameterClass="int" resultClass="BoardCommentModel">
+		SELECT ID, writer, COMMENT, DATE, email, linkedNum FROM comments WHERE linkedNum = #id# ORDER BY ID DESC 
+	</select>		
+	<select id="searchBoardList" parameterClass="java.util.HashMap" resultClass="BoardModel">
+		SELECT ID, writer, type, summary, content, hitCount, recommandCount, email, keyWord, DATE FROM cboard 
+		WHERE $searchType$ LIKE '%$searchTerm$%' ORDER BY ID DESC 
+	</select>
+	<select id="getTypeBoardList" parameterClass="java.util.HashMap" resultClass="BoardModel">
+		SELECT ID, writer, type, summary, content, hitCount, recommandCount, email, keyWord, DATE FROM cboard 
+		WHERE type = #searchType# ORDER BY ID DESC
+	</select>
+	<select id="getTotalBoardContentNum" resultClass="int">
+		SELECT 
+			count(ID)
+		FROM cboard
+	</select>
+	
+	<update id="updateHitcount" parameterClass="java.util.HashMap">
+		UPDATE
+			cboard 
+		SET hitCount = #hitCount#
+		WHERE ID = #id#
+	</update>
+	<update id="updateRecommentcount" parameterClass="java.util.HashMap">
+		UPDATE
+			cboard 
+		SET recommandCount = #recommandCount#
+		WHERE ID = #id#
+	</update>
+	<update id="editCotent" parameterClass="java.util.HashMap">
+		UPDATE
+			cboard 
+		SET type = #type#,
+			summary = #summary#,
+			content = #content#,
+			keyWord = #keyWord#,
+			date = #date#
+		WHERE ID = #id#
+	</update>
+	<update id="editComment" parameterClass="java.util.HashMap">
+		UPDATE
+			comments
+		SET comment = #comment#,
+			date = #date#
+		WHERE ID = #id#
+	</update>
+	
+	<delete id="deleteContent" parameterClass="int">
+		DELETE
+		FROM cboard
+		WHERE ID = #id#	
+	</delete>
+	<delete id="deleteComments" parameterClass="int">
+		DELETE
+		FROM comments
+		WHERE linkedNum = #linkedNum#
+	</delete>
+	<delete id="deleteComment" parameterClass="int">
+		DELETE
+		FROM comments
+		WHERE ID = #id#
+	</delete>
+</sqlMap>
+
+
+
+
+
+
+

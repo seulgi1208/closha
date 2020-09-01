@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="register">
+	<typeAlias alias="RegisterPipelineModel" type="org.kobic.gwt.smart.closha.shared.model.pipeline.PipelineModel"/>
+	<typeAlias alias="RegisterModuleModel" type="org.kobic.gwt.smart.closha.shared.model.module.register.RegisterModuleModel"/>
+	
+	<insert id="registerPipeline" parameterClass="RegisterPipelineModel">
+		INSERT INTO registerpipeline(pipelineID, registerID, pipelineName, pipelineDesc, pipelineAuthor, registerDate, updateDate, pipelineXML, linkedKey, ontologyID, version, pipelineType) 
+			VALUES(#pipelineID#, #registerID#, #pipelineName#, #pipelineDesc#, #pipelineAuthor#, #registerDate#, #updateDate#, #pipelineXML#, #linkedKey#, #ontologyID#, #version#, #pipelineType#)
+	</insert>
+	
+	<insert id="registerModules" parameterClass="RegisterModuleModel">
+		INSERT INTO registerpipelinemodules(type, moduleID, ontologyID, appFormat,
+		language, scriptPath, cmd, moduleName, moduleDesc, moduleAuthor,
+		registerDate, updateDate, parameter, linkedKey, version, icon, url, isOpen, isMulti, isAdmin, isCheck, isParallel, isAlignment)
+		VALUES(#type#, #moduleID#, #ontologyID#, #appFormat#, #language#, #scriptPath#,
+		#cmd#, #moduleName#, #moduleDesc#, #moduleAuthor#, #registerDate#,
+		#updateDate#, #parameter#, #linkedKey#, #version#, #icon#, #url#, #open#, #multi#, #admin#, #check#, #parallel#, #alignment#)
+	</insert>
+	
+	<select id="getRegisterPipelines" resultClass="RegisterPipelineModel">
+		SELECT pipelineID, registerID, pipelineName, pipelineDesc, pipelineAuthor, registerDate, updateDate, 
+			pipelineXML, linkedKey, ontologyID, version, pipelineType FROM registerpipeline
+	</select>
+	
+	<select id="getSelectRegisterPipelines" resultClass="RegisterPipelineModel">
+		SELECT pipelineID, registerID, pipelineName, pipelineDesc, pipelineAuthor, registerDate, updateDate, 
+			pipelineXML, linkedKey, ontologyID, VERSION, pipelineType FROM registerpipeline WHERE pipelineType = #type#
+	</select>
+	
+	<select id="getRegisterPipelineModules" resultClass="RegisterModuleModel">
+		SELECT type, moduleID, ontologyID, appFormat, language, scriptPath, cmd,
+		moduleName, moduleDesc, moduleAuthor, registerDate, updateDate,
+		parameter, linkedKey, version, icon, url, isOpen, isMulti, isAdmin, isCheck, isParallel, isAlignment FROM registerpipelinemodules
+	</select>
+	
+	<select id="getSelectRegisterPipelineModules" resultClass="RegisterModuleModel">
+		SELECT type, moduleID, ontologyID, appFormat, language, scriptPath, cmd,
+		moduleName, moduleDesc, moduleAuthor, registerDate, updateDate,
+		parameter, linkedKey, version, icon, url, isOpen, isMulti, isAdmin, isCheck, isParallel, isAlignment FROM registerpipelinemodules
+		WHERE (isOpen=1 AND isAdmin=1 AND isCheck=1) OR (moduleAuthor = #userID# AND isCheck=1)
+	</select>
+		
+	<select id="getRegisterPipelinesXML" resultClass="RegisterPipelineModel">
+		SELECT pipelineName, pipelineXML FROM registerpipeline WHERE pipelineID = #pipelineID#
+	</select>	
+	
+	<delete id="deleteRegisterPipeline" parameterClass="String">
+		DELETE
+		FROM registerpipeline
+		WHERE registerID = #registerID#
+	</delete>
+	
+	<delete id="deleteRegisterPipelineModule" parameterClass="String">
+		DELETE
+		FROM registerpipelinemodules
+		WHERE moduleID = #moduleID#
+	</delete>
+	
+	<update id="updateUserModuleCheck">
+		UPDATE registerpipelinemodules SET isCheck = #is_check# WHERE moduleID = #module_id#
+	</update>
+	
+</sqlMap>
+
+
+
+
+
+
+

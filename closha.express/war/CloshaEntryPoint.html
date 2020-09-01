@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+<meta name="viewport"
+	content="initial-scale=1, width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="shortcut icon" href="images/closha/icon/biotech-16.ico" />
+<!--                                                               -->
+<!-- Consider inlining CSS to reduce the number of requested files -->
+<!--                                                               -->
+<link type="text/css" rel="stylesheet"
+	href="CloshaEntryPoint.css?isc_version=10.1.css">
+
+<!--                                           -->
+<!-- Any title is fine                         -->
+<!--                                           -->
+<title>CLOSHA[V-1.0]</title>
+
+<!--                                           -->
+<!-- This script loads your compiled module.   -->
+<!-- If you add any GWT meta tags, they must   -->
+<!-- be added before this line.                -->
+<!--                                           -->
+
+<style type="text/css">
+body {
+	overflow: hidden;
+}
+
+#loadingBack {
+	border: 1px solid #ccc;
+	position: absolute;
+	left: 45%;
+	top: 40%;
+	padding: 2px;
+	z-index: 20001;
+	height: auto;
+}
+
+#loading {
+	z-index: 20001;
+	width: 1000px;
+	height: 920px;
+	margin: 0 auto;
+	background: url('images/closha/img/loading.png') no-repeat;
+}
+
+#loading a {
+	color: #225588;
+}
+
+#loading .loadingIndicator {
+	font: bold 13px tahoma, arial, helvetica;
+	padding: 10px;
+	margin: 0;
+	height: auto;
+	color: #444;
+}
+
+#loadingMsg {
+	font: normal 10px arial, tahoma, sans-serif;
+}
+</style>
+
+<script
+	src="org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Core.js?isc_version=10.1.js"></script>
+
+<!-- Code Mirror 2 dependencies. -->
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="codemirror/lib/codemirror.js"></script>
+
+<!-- clike mode dependency -->
+<script src="codemirror/mode/clike/clike.js"></script>
+
+<!--highchart modules -->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/modules/exporting.js"></script>
+<script type="text/javascript" src="js/themes/grid.js"></script>
+
+<!-- 
+        include SmartClient
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Foundation.js'></script>
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Containers.js'></script>
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Grids.js'></script>
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Forms.js'></script>
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_RichTextEditor.js'></script>
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Calendar.js'></script>
+		<script src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_DataBinding.js'></script>
+		 -->
+
+<!--include SmartClient -->
+<script type="text/javascript">
+	document.getElementById('loadingMsg').innerHTML = 'Loading UI Components...';
+</script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Foundation.js?isc_version=10.1.js'></script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Containers.js?isc_version=10.1.js'></script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Grids.js?isc_version=10.1.js'></script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Forms.js?isc_version=10.1.js'></script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_RichTextEditor.js?isc_version=10.1.js'></script>
+<script type="text/javascript">
+	document.getElementById('loadingMsg').innerHTML = 'Loading Data API...';
+</script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_DataBinding.js?isc_version=10.1.js'></script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Calendar.js?isc_version=10.1.js'></script>
+<script type="text/javascript"
+	src='org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/modules/ISC_Drawing.js?isc_version=10.1.js'></script>
+
+<script type="text/javascript">
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ')
+				c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) == 0)
+				return c.substring(nameEQ.length, c.length);
+		}
+		return null;
+	}
+
+	// Determine what skin file to load
+	var currentSkin = readCookie('skin_name_2_4');
+	if (currentSkin == null)
+		currentSkin = "Enterprise";
+</script>
+
+<!--load skin-->
+<script type="text/javascript">
+	document.getElementById('loadingMsg').innerHTML = 'Loading skin...';
+</script>
+
+<script type="text/javascript">
+	document
+			.write("<"
+					+ "script src=org.kobic.gwt.smart.closha.CloshaEntryPoint/sc/skins/"
+					+ currentSkin
+					+ "/load_skin.js?isc_version=9.1.js><"+"/script>");
+</script>
+
+<script type="text/javascript"
+	src="org.kobic.gwt.smart.closha.CloshaEntryPoint/org.kobic.gwt.smart.closha.CloshaEntryPoint.nocache.js"></script>
+</head>
+
+<!--                                           -->
+<!-- The body can have arbitrary html, or      -->
+<!-- we leave the body empty because we want   -->
+<!-- to create a completely dynamic ui         -->
+<!--                                           -->
+<body>
+
+	<!-- OPTIONAL: include this if you want history support -->
+	<iframe id="__gwt_historyFrame" style="width: 0; height: 0; border: 0"></iframe>
+
+	<div id="loadingWrapper">
+		<div id="loading">
+			<div class="loadingIndicator">
+				<div style="width: 140px; margin: 0 auto; margin-top: 420px;">
+					<img src="images/icon_loading.gif" width="16" height="16"
+						style="margin-right: 8px; float: left; vertical-align: top;" />CLOSHA-V.1.0<br />
+					<span id="loadingMsg">Loading wait CLOSHA...</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

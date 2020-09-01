@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<module>
+	<!-- 
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.smartgwt.SmartGwt"/>
+
+	<inherits name="com.google.gwt.core.Core"/>
+    <inherits name="com.google.gwt.user.History"/>
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    
+ 	<inherits name="com.smartgwt.SmartGwtNoTheme" />
+	<inherits name="com.smartgwt.SmartGwtNoScript" />
+	<inherits name="com.smartgwt.DrawingNoScript"/>
+	<inherits name="com.smartgwt.tools.SmartGwtTools" />
+
+	<inherits name="com.google.gwt.user.theme.standard.Standard" />
+
+	<inherits name="com.smartclient.theme.graphite.Graphite" /> 
+	<inherits name="com.smartclient.theme.graphite.GraphiteResources" /> 
+	
+	<inherits name="com.smartclient.theme.simplicity.Simplicity" />
+	<inherits name="com.smartclient.theme.simplicity.SimplicityResources" />
+	
+	<inherits name="com.smartclient.theme.enterpriseblue.EnterpriseBlue"/>
+	<inherits name="com.smartclient.theme.enterpriseblue.EnterpriseBlueResources" />
+	
+	<inherits name="com.smartclient.theme.enterprise.Enterprise" />
+	<inherits name="com.smartclient.theme.enterprise.EnterpriseResources" />
+	 -->
+	<inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.core.Core"/>
+    <inherits name="com.google.gwt.user.History"/>
+    <inherits name="com.google.gwt.i18n.I18N"/>
+
+    <inherits name="com.smartgwt.SmartGwtNoScript"/>
+    <inherits name="com.smartgwt.DrawingNoScript"/>
+    <inherits name="com.smartgwt.tools.SmartGwtTools"/>
+    <inherits name="com.smartclient.theme.enterprise.EnterpriseResources"/>
+    <inherits name="com.smartclient.theme.enterpriseblue.EnterpriseBlueResources"/>
+    <inherits name="com.smartclient.theme.graphite.GraphiteResources"/>
+    <inherits name="com.smartclient.theme.simplicity.SimplicityResources"/>
+    
+	<inherits name="com.allen_sauer.gwt.dnd.gwt-dnd" />
+	<inherits name="pl.tecna.gwt.connectors.Connectors" />
+
+	<inherits name="org.moxieapps.gwt.highcharts.Highcharts" />
+
+	<inherits name="com.google.gwt.visualization.Visualization" />
+	<inherits name="com.chap.links.Network" />
+
+	<inherits name="com.orange.links.Links" />
+	<inherits name="com.google.gwt.widgetideas.WidgetIdeas" />
+	<inherits name="com.google.gwt.libideas.LibIdeas" />
+	<inherits name="com.google.gwt.xml.XML" />
+	
+	<inherits name="gwtupload.GWTUpload"/>
+	
+	<inherits name="de.novanic.eventservice.GWTEventService"/>
+	
+	<inherits name="com.google.common.collect.Collect"/>
+	
+	<inherits name="com.google.codemirror2_gwt.CodeMirror2GWT"/>
+	<inherits name='com.alexgorbatchev.syntaxhighlighter.Highlighter'/>
+	
+	<entry-point class="org.kobic.gwt.smart.closha.client.CloshaEntryPoint" />
+	
+	<source path="client" />
+	<source path="shared" />
+	
+	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
+	
+</module>

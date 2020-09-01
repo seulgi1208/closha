@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="instance">
+	<typeAlias alias="InstancePipelineModel"
+		type="org.kobic.gwt.smart.closha.shared.model.pipeline.instance.InstancePipelineModel" />
+		
+		<typeAlias alias="InstancePipelineJobModel"
+		type="org.kobic.gwt.smart.closha.shared.model.pipeline.instance.InstancePipelineExeModel" />
+
+	<insert id="newInstancePipeline" parameterClass="InstancePipelineModel">
+		INSERT INTO
+		instancepipeline(instanceID, pipelineID, exeID, pipelineName, instanceOwner,
+		ownerEmail, instanceName, instanceDesc,
+		instanceXML, status, exeCount, createDate, register)
+		VALUES(#instanceID#, #pipelineID#, #exeID#, #pipelineName#, #instanceOwner#, #ownerEmail#,
+		#instanceName#, #instanceDesc#,
+		#instanceXML#, #status#, #exeCount#, #createDate#, #register#)
+	</insert>
+	
+	<insert id="newInstancePipelineJob" parameterClass="InstancePipelineJobModel">
+		INSERT INTO
+		instancepipelinejob(pipelineID, instanceID, exeID, startDate, endDate)
+		VALUES(#pipelineID#, #instanceID#, #exeID#, #startDate#, #endDate#)
+	</insert>
+
+	<select id="getInstancePipelineFromProject" resultClass="InstancePipelineModel" parameterClass="java.util.HashMap">
+		SELECT instanceID, pipelineID, exeID, pipelineName, instanceOwner,
+		ownerEmail, instanceName, instanceDesc,
+		instanceXML, status, exeCount, createDate, register FROM instancepipeline WHERE instanceID = #instanceID#
+	</select>
+	
+	<select id="getOwnerInstancePipeline" resultClass="InstancePipelineModel" parameterClass="java.util.HashMap">
+		SELECT instanceID, pipelineID, exeID, pipelineName, instanceOwner,
+		ownerEmail, instanceName, instanceDesc,
+		instanceXML, status, exeCount, createDate, register FROM instancepipeline WHERE instanceOwner = #instanceOwner#
+	</select>
+	
+	<select id="getOwnerInstancePipelineWithStatus" resultClass="InstancePipelineModel" parameterClass="java.util.HashMap">
+	SELECT instanceID, pipelineID, exeID, pipelineName, instanceOwner,
+	ownerEmail, instanceName, instanceDesc,
+	instanceXML, status, exeCount,
+	createDate, register FROM instancepipeline WHERE instanceOwner = #instanceOwner#
+	AND status = #status#
+	</select>
+	
+	<select id="getInstancePipelineState" resultClass="int">
+		SELECT status FROM instancepipeline WHERE instanceID = #instanceID#
+	</select>
+	
+	<select id="getInstancePipelineExecuteCount" resultClass="int">
+		SELECT exeCount FROM instancepipeline WHERE instanceID = #instanceID#
+	</select>
+	
+	<select id="getInstancePipelineXMLData" resultClass="string">
+		SELECT instanceXML FROM instancepipeline WHERE instanceID = #instanceID#
+	</select>
+	
+	<select id="getInstancePipelineJob" parameterClass="string" resultClass="InstancePipelineJobModel">
+		SELECT exeID, startDate, endDate FROM instancepipelinejob WHERE instanceID = #instanceID#
+	</select>
+	
+	<update id="updateInstancePipelineExecuteCount" parameterClass="java.util.HashMap">
+		UPDATE
+			instancepipeline 
+		SET exeCount = #exeCount#
+		WHERE instanceID = #instanceID#
+	</update>
+	
+	<update id="updateInstancePipelineXML" parameterClass="java.util.HashMap">
+		UPDATE instancepipeline SET instanceXML = #instanceXML# WHERE 
+			instanceOwner = #instanceOwner# AND instanceID = #instanceID# AND instanceName = #instanceName#
+	</update>
+	
+	<update id="updateInstancePipelineStatus" parameterClass="java.util.HashMap">
+		UPDATE instancepipeline SET status = #status# WHERE 
+			instanceOwner = #instanceOwner# AND instanceID = #instanceID# AND instanceName = #instanceName#
+	</update>
+	
+	<update id="updateInstancePipelineRegister" parameterClass="java.util.HashMap">
+		UPDATE instancepipeline SET register = #register# WHERE 
+			instanceID = #instanceID#
+	</update>
+	
+	<update id="updateInstancePipelineStatusWithExeID" parameterClass="java.util.HashMap">
+		UPDATE instancepipeline SET status = #status#, exeID = #exeID# WHERE 
+			instanceOwner = #instanceOwner# AND instanceID = #instanceID# AND instanceName = #instanceName#
+	</update>
+	
+	<update id="updateInstancePipelineEndDate" parameterClass="java.util.HashMap">
+		UPDATE instancepipelinejob SET endDate = #endDate# WHERE 
+			instanceID = #instanceID# AND exeID = #exeID#
+	</update>
+	
+	<delete id="delteInstancePipeline" parameterClass="String">
+		DELETE
+		FROM instancepipeline
+		WHERE instanceID = #instanceID#
+	</delete>
+	
+	<delete id="delteInstancePipelineJob" parameterClass="String">
+		DELETE
+		FROM instancepipelinejob
+		WHERE instanceID = #instanceID#
+	</delete>
+	
+	<delete id="delteInstancePipelineExecuteHistory" parameterClass="java.util.HashMap">
+		DELETE FROM instancepipelinejob WHERE instanceID = #instanceID# AND
+		exeID = #exeID#
+	</delete>
+	
+	<select id="isInstancePipelineExist" resultClass="InstancePipelineModel" parameterClass="java.util.HashMap">
+		SELECT * FROM instancepipeline WHERE instanceOwner = #instanceOwner# AND instanceName = #instanceName#
+	</select>
+
+</sqlMap>
+
+
+
+
+
+
+
