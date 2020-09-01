@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<!-- Appendner, Layout -->
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%p(%d{yyyy-MM-dd HH:mm:ss}): [%c] >> %m %n" />
+		</Console>
+	</Appenders>
+	
+	<!-- Logger -->
+	<!-- 
+	<Loggers>
+		<Logger name="rapidant" level="info">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Root level="warn">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
+	-->
+</Configuration>

@@ -1,0 +1,37 @@
+.root {
+	-fx-base: rgba(40, 50, 60, 255);
+}
+
+.table-row-cell {
+	-fx-background-color: #fafaff;
+	-fx-font-family: "MS Outlook";
+}
+
+.table-row-cell:empty {
+	-fx-background-color: white;
+}
+
+.table-row-cell:empty .table-cell {
+	-fx-border-width: 1px;
+}
+
+.table-row-cell .table-cell {
+	-fx-border-width: 1px;
+}
+
+/*.table-row-cell:filled:focused:selected {
+	-fx-background-color: #ffdead; 
+	-fx-background-insets: 0, 1, 2;
+	-fx-strikethrough: true;
+} */
+.table-row-cell:filled:selected, .table-row-cell:filled>.table-cell:selected
+	{
+	-fx-background-color: #ffdead;
+	-fx-background-insets: 0, 1, 2;
+	-fx-strikethrough: true;
+}
+
+.table-row-cell {
+	-fx-border-color: white;
+	-fx-table-cell-border-color: white;
+}

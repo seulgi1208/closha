@@ -1,0 +1,22 @@
+
+.menuBar{
+	-fx-font-size: 9.0pt;
+	
+	
+}
+
+.menuBar:focused{
+	-fx-background-color: #0000ff;
+}
+
+.menu .label{     
+	-fx-text-fill: #800000;
+} 
+
+.menu-item:focused {
+    -fx-background-color: #0080c0;
+}
+
+.context-menu {
+    -fx-background-color: #dcdcdc;
+}
